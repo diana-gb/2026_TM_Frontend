@@ -17,7 +17,7 @@ fetch recibe dos parametos:
 - un objeto de configuracion
  */
 
-const URL_API = 'http://localhost:8080'
+const URL_API = import.meta.env.VITE_API_URL //'http://localhost:8080'
 
 export async function login (email, password) {
     const response_http = await fetch(
