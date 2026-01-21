@@ -3,7 +3,7 @@ import { useNavigate } from "react-router"
 import useRequest from "./useRequest"
 import useForm from "./useForm"
 import { login } from "../services/authService"
-import { AUTH_TOKEN_KEY, AuthContext } from "../context/AuthContext"
+import { AuthContext } from "../context/AuthContext"
 
 function useLogin (){
         const navigate = useNavigate()

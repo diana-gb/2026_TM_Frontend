@@ -1,8 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router'
-import useForm from '../../hooks/useForm'
-import { register } from '../../services/authService'
-import useRequest from '../../hooks/useRequest'
 import useRegister from '../../hooks/useRegister'
 
 const RegisterScreen = () => {
