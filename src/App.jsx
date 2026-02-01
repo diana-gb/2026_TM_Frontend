@@ -4,6 +4,8 @@ import { Route, Routes } from 'react-router'
 import RegisterScreen from './Screens/RegisterSceen/RegisterScreen'
 import AuthContextProvider from './context/AuthContext'
 import AuthMiddlewares from './Middlewares/AuthMiddlewares'
+import WorkspaceContextProvider from './context/WorkSpaceContext'
+import HomeScreen from './Screens/HomeSreen/HomeScreen'
 
 
 
@@ -18,7 +20,11 @@ function App() {
       <Route path='/register' element={<RegisterScreen/>}/>
       <Route path='/login' element={<LoginScreen/>}/>
       <Route element={<AuthMiddlewares/>} >
-          <Route path='/home' element={<h1>HOME</h1>}/>
+          <Route path='/home' element={
+            <WorkspaceContextProvider>
+              <HomeScreen/>
+            </WorkspaceContextProvider>
+          }/>
         
       </Route>
     </Routes>

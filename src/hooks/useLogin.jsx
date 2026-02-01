@@ -9,7 +9,7 @@ function useLogin (){
         const navigate = useNavigate()
         const {saveSession, isLogged, session} = useContext(AuthContext)
     
-        console.log({isLogged, session})
+        //console.log({isLogged, session})
         
         const initialLoginForm = {
         email: '',
