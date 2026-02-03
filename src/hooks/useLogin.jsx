@@ -15,6 +15,8 @@ function useLogin (){
         password: ''
     }
 
+    const {response, error, loading, sendRequest }= useRequest()
+
     function logearse(form_state){
         sendRequest(
             () => {
@@ -24,8 +26,6 @@ function useLogin (){
     }
 
     const {onChangeFieldValue, onSubmitForm, form_state} = useForm({initial_form_fields: initialLoginForm, onSubmit: logearse})
-
-    const {response, error, loading, sendRequest} = useRequest()
 
 
     useEffect(
