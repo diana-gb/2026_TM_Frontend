@@ -2,14 +2,14 @@ import { useContext, useEffect } from "react"
 import { useNavigate } from "react-router"
 import useRequest from "./useRequest"
 import useForm from "./useForm"
-import { login } from "../services/authService"
+import { login } from "../services/authService.js"
 import { AuthContext } from "../context/AuthContext"
 
 function useLogin (){
         const navigate = useNavigate()
         const {saveSession, isLogged, session} = useContext(AuthContext)
     
-        //console.log({isLogged, session})
+        console.log({isLogged, session})
         
         const initialLoginForm = {
         email: '',

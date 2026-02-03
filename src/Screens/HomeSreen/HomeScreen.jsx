@@ -3,6 +3,7 @@ import { WorkspaceContext } from '../../context/WorkSpaceContext'
 
 
 const HomeScreen = () => {
+    
     const{workspace_list_loading, workspace_list_error, workspace_list } = useContext(WorkspaceContext)
     
     console.log(workspace_list)
