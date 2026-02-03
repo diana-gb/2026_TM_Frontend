@@ -19,7 +19,7 @@ const HomeScreen = () => {
                 workspace_list_error && <span>{workspace_list_error.message}</span>
             }
             {
-                workspace_list.data.workspaces && workspace_list.data.workspaces.length > 0 && workspace_list.map(
+                workspace_list.data.workspaces && workspace_list.data.workspaces.length > 0 && workspace_list.data.workspaces.map(
                     workspace => <div key={workspace.workspace_id}>{workspace.workspace_title}</div>
                 )
             }

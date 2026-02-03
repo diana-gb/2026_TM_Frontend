@@ -19,7 +19,7 @@ function App() {
       <Route path='/' element={<LoginScreen/>}/>
       <Route path='/register' element={<RegisterScreen/>}/>
       <Route path='/login' element={<LoginScreen/>}/>
-      <Route element={<AuthMiddlewares/>} >
+      <Route element={<AuthMiddlewares/>}>
           <Route path='/home' element={
             <WorkspaceContextProvider>
               <HomeScreen/>
