@@ -10,7 +10,7 @@ export const WorkspaceContext = createContext(
     }
 )
 
-const WorkspaceContextProvider = ({ Children}) => {
+const WorkspaceContextProvider = ({ children}) => {
     const {loading, response, error, sendRequest} = useRequest()
 
     useEffect(
@@ -32,7 +32,7 @@ const WorkspaceContextProvider = ({ Children}) => {
     return (
         <WorkspaceContext.Provider 
         value={provider_value}>
-            {Children}
+            {children}
         </WorkspaceContext.Provider>
     )
 }

@@ -9,7 +9,7 @@ export async function getWorkspaceList () {
         {
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer' + localStorage.getItem('auth_token'),
+                'Authorization': 'Bearer ' + localStorage.getItem('auth_token'),
             },
         }
     )
