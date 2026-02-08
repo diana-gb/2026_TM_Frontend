@@ -5,9 +5,8 @@ import RegisterScreen from './Screens/RegisterSceen/RegisterScreen'
 import AuthContextProvider from './context/AuthContext'
 import AuthMiddlewares from './Middlewares/AuthMiddlewares'
 import WorkspaceContextProvider from './context/WorkSpaceContext'
+import CreateWorkspaceScreen from './Screens/CreateWorkspaceSceen/CreateWorkspaceScreen'
 import HomeScreen from './Screens/HomeSreen/HomeScreen'
-
-
 
 function App() {
 
@@ -15,19 +14,20 @@ function App() {
   return (
 
     <AuthContextProvider>
-    <Routes>
-      <Route path='/' element={<LoginScreen/>}/>
-      <Route path='/register' element={<RegisterScreen/>}/>
-      <Route path='/login' element={<LoginScreen/>}/>
-      <Route element={<AuthMiddlewares/>}>
+      <Routes>
+        <Route path='/' element={<LoginScreen />} />
+        <Route path='/register' element={<RegisterScreen />} />
+        <Route path='/login' element={<LoginScreen />} />
+        <Route element={<AuthMiddlewares />}>
           <Route path='/home' element={
             <WorkspaceContextProvider>
-              <HomeScreen/>
+              <HomeScreen />
             </WorkspaceContextProvider>
-          }/>
-        
-      </Route>
-    </Routes>
+          } />
+          <Route path='/create-workspace' element={<CreateWorkspaceScreen />} />
+
+        </Route>
+      </Routes>
     </AuthContextProvider>
   )
 }

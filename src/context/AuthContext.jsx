@@ -19,6 +19,8 @@ function AuthContextProvider ({children}){
         /* 
         Normalmente los backend suelen tener un endpoint
         GET / api / auth / validate-token (Authorization: bear auth-token) Te responde si el token es valido o no
+
+        Este useEfect nos va a servir si en el furuto tenemos:  GET / api / auth / validate-token 
         */
         () => {
 /*             const auth_token = localStorage.getItem(AUTH_TOKEN_KEY)
