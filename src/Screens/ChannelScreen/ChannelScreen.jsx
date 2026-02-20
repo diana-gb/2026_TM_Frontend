@@ -10,7 +10,20 @@ if(channel_list_loading || !channel_list){
 }
 
 return (
-        <div>ChannelScreen</div>
+        <div>
+            <h1>ChannelScreen</h1>
+            {
+                channel_list_error && <span>{channel_list_error.message}</span>
+            }
+            {
+                channel_list.channels && channel_list.channels.length > 0 && channel_list.channels.map(
+                    channel => <div key={channel.id}>{channel.name}</div>
+                )
+            }
+            {
+                channel_list.channels && channel_list.channels.length === 0 && <span>No hay canales en este espacio de trabajo</span>
+            }
+        </div>
     )
 }
 

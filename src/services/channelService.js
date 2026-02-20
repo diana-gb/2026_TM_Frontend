@@ -19,7 +19,8 @@ async function getChannelList () {
     if(!response.ok){
         throw new ServerError(response.message, response.status)
     }
-    return response
+
+    return response.data.channels
 }
 
 export default getChannelList
