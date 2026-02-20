@@ -18,7 +18,7 @@ const CreateWorkspaceScreen = () => {
               name="title"
               value={form_state.title}
               onChange={onChangeFieldValue}
-              placeholder="Ej: Proyecto Alpha"
+              placeholder="Ej: Proyecto Slack"
             />
             {errors.title && <span className="error-message">⚠️ {errors.title}</span>}
           </div>
