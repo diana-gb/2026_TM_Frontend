@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { ChannelContext } from '../../context/ChannelContext'
+import { Link } from 'react-router-dom'
 
 const ChannelScreen = () => {
 const {channel_list_loading, channel_list, channel_list_error}= useContext(ChannelContext)
@@ -11,6 +12,7 @@ if(channel_list_loading || !channel_list){
 
 return (
         <div>
+            <Link to='/home'>Volver</Link>
             <h1>ChannelScreen</h1>
             {
                 channel_list_error && <span>{channel_list_error.message}</span>
