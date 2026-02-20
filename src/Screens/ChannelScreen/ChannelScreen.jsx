@@ -16,12 +16,12 @@ return (
                 channel_list_error && <span>{channel_list_error.message}</span>
             }
             {
-                channel_list.channels && channel_list.channels.length > 0 && channel_list.channels.map(
+                channel_list.data.channels && channel_list.data.channels.length > 0 && channel_list.data.channels.map(
                     channel => <div key={channel.id}>{channel.name}</div>
                 )
             }
             {
-                channel_list.channels && channel_list.channels.length === 0 && <span>No hay canales en este espacio de trabajo</span>
+                channel_list.data.channels && channel_list.data.channels.length === 0 && <span>No hay canales en este espacio de trabajo</span>
             }
         </div>
     )

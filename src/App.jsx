@@ -8,7 +8,7 @@ import WorkspaceContextProvider from './context/WorkSpaceContext'
 import CreateWorkspaceScreen from './Screens/CreateWorkspaceSceen/CreateWorkspaceScreen'
 import HomeScreen from './Screens/HomeSreen/HomeScreen'
 import ChannelScreen from './Screens/ChannelScreen/ChannelScreen'
-import ChannelContextProvider from './context/ChannelContext'
+import ChannelContextProvider from './context/ChannelContextProvider'
 
 function App() {
 
@@ -27,7 +27,7 @@ function App() {
             </WorkspaceContextProvider>
           } />
           <Route path='/create-workspace' element={<CreateWorkspaceScreen />} />
-          <Route path='/channel' element={
+          <Route path='/workspace/:workspace_id/channels' element={
             <ChannelContextProvider>
               <ChannelScreen/>
             </ChannelContextProvider>

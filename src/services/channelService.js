@@ -2,7 +2,7 @@ import { ServerError } from "../utils/errorUtils"
 
 const URL_API = import.meta.env.VITE_API_URL
 
-async function getChannelList () {
+async function getChannelList (workspace_id) {
 
     const http_response = await fetch(
         `${URL_API}/api/workspace/${workspace_id}/channels`,
@@ -16,11 +16,12 @@ async function getChannelList () {
     )
 
     const response = await http_response.json()
+    
     if(!response.ok){
         throw new ServerError(response.message, response.status)
     }
 
-    return response.data.channels
+    return response
 }
 
 export default getChannelList

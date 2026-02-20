@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { WorkspaceContext } from '../../context/WorkSpaceContext'
-
+import { useNavigate } from "react-router-dom";
 
 const HomeScreen = () => {
 
+    const navigate = useNavigate()
     const{workspace_list_loading, workspace_list_error, workspace_list } = useContext(WorkspaceContext)
     
     console.log(workspace_list)
@@ -21,7 +22,7 @@ const HomeScreen = () => {
             }
             {
                 workspace_list.data.workspaces && workspace_list.data.workspaces.length > 0 && workspace_list.data.workspaces.map(
-                    workspace => <div key={workspace.workspace_id}>{workspace.workspace_title}</div>
+                    workspace => <div key={workspace.workspace_id} onClick={() => navigate(`/workspace/${workspace.workspace_id}/channels`)}>{workspace.workspace_title}</div>
                 )
             }
             {

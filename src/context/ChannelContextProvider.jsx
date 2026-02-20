@@ -1,32 +1,25 @@
-import { createContext, useContext, useEffect } from "react";
+import { useEffect } from "react";
 import useRequest from "../hooks/useRequest";
 import getChannelList from "../services/channelService";
-import { WorkspaceContext } from "./WorkSpaceContext";
-
-export const ChannelContext = createContext(
-    {
-        channel_list_loading: false,
-        channel_list: null,
-        channel_list_error: null
-    }
-)
-
+import { useParams } from "react-router";
+import { ChannelContext } from "./ChannelContext";
 
 const ChannelContextProvider = ({ children}) => {
     
-    const {workspace} = useContext(WorkspaceContext)
+    const {workspace_id} = useParams()
+    console.log("workspace_id:", workspace_id)
 
     const {loading, response, error, sendRequest} = useRequest()
 
     useEffect(
         () => {
-            if(workspace?._id){
+            if(workspace_id){
                 sendRequest( () =>
-                    getChannelList(workspace._id)
+                    getChannelList(workspace_id)
                 )
             }
         },
-        [workspace]
+        [workspace_id]
     )
 
     const provider_channel_values = {
