@@ -19,8 +19,8 @@ const {
             <div className='login_container'>
 
             <div className='login_logo'>
-            {/* buscar logo */}
-            <span className='login_logo_text'>slack</span>
+            <img src='/logo.png' alt='Logo Slack' />
+           {/*  <span className='login_logo_text'>slack</span> */}
             </div>
 
             <div className='login_header'>
