@@ -20,12 +20,11 @@ const {
 
             <div className='login_logo'>
             <img src='/logo.png' alt='Logo Slack' />
-           {/*  <span className='login_logo_text'>slack</span> */}
             </div>
 
             <div className='login_header'>
-            <h1>Iniciar sesion</h1>
-            <p>Ingresa el correo de trabajo</p>
+            <h1>Ingresa tu correo electrónico.</h1>
+            <p>Recomendamos usar el correo de trabajo</p>
             </div>
 
             <div className='login_card'>

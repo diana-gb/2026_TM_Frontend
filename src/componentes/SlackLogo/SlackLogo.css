@@ -1,0 +1,41 @@
+    /* Centrado en pantalla */
+    .slack-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    /* Grid cuadrado */
+    .slack-grid {
+    width: 220px;
+    height: 220px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px; 
+    }
+
+    .dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: pulse 1.2s ease-in-out infinite;
+    }
+
+
+    .dot1 { background-color: #36C5F0; animation-delay: 0s; }
+    .dot2 { background-color: #2EB67D; animation-delay: 0.2s; }
+    .dot3 { background-color: #ECB22E; animation-delay: 0.4s; }
+    .dot4 { background-color: #E01E5A; animation-delay: 0.6s; }
+
+
+    @keyframes pulse {
+    0%, 100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    }

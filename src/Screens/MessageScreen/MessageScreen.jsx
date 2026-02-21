@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import MessagesContext from '../../context/MessagesContext'
+import SlackLogo from '../../componentes/SlackLogo/SlackLogo'
 
 const MessageScreen = () => {
 
     const {messages_loading, messages_list, messages_error} = useContext(MessagesContext)
 
     if(messages_loading || !messages_list){
-        return <span>Loading..</span>
+        return <SlackLogo/>
     }
 
     return (

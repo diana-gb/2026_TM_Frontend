@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { ChannelContext } from '../../context/ChannelContext'
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
+import SlackLogo from '../../componentes/SlackLogo/SlackLogo'
 
 const ChannelScreen = () => {
     const {workspace_id} = useParams()
@@ -9,7 +10,7 @@ const {channel_list_loading, channel_list, channel_list_error}= useContext(Chann
 console.log(channel_list) 
 
 if(channel_list_loading || !channel_list){
-    return <span>Loading ... </span>
+    return <SlackLogo/>
 }
 
 return (

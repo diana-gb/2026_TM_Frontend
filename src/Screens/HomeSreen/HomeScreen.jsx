@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { WorkspaceContext } from '../../context/WorkSpaceContext'
 import { Link, useNavigate } from "react-router-dom";
+import SlackLogo from '../../componentes/SlackLogo/SlackLogo';
 
 const HomeScreen = () => {
 
@@ -11,7 +12,7 @@ const HomeScreen = () => {
 
     
         if( workspace_list_loading || !workspace_list ){
-            return <span>Loading ..</span>
+            return <SlackLogo/>
         }
 
     return (
