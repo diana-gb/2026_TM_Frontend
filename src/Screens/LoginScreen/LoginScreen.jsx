@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link} from 'react-router'
 import useLogin from '../../hooks/useLogin'
+import './LoginScreen.css'
 
 const LoginScreen = () => {
 
@@ -14,36 +15,67 @@ const {
 } = useLogin()
 
     return (
-        <div>
+        <div className='login_page'>
+            <div className='login_container'>
+
+            <div className='login_logo'>
+            {/* buscar logo */}
+            <span className='login_logo_text'>slack</span>
+            </div>
+
+            <div className='login_header'>
             <h1>Iniciar sesion</h1>
-        <form onSubmit={onSubmitForm}>
-            <div>
+            <p>Ingresa el correo de trabajo</p>
+            </div>
+
+            <div className='login_card'>
+
+                <form className='login_form' onSubmit={onSubmitForm}>
+
+            <div className='login_field'>
                 <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" onChange={onChangeFieldValue} value={form_state.email}/>
+                <input type="email" id="email" name="email" 
+                placeholder='nombre@email.com'
+                onChange={onChangeFieldValue} 
+                value={form_state.email}/>
             </div>
-            <div>
+
+            <div className='login_field'> 
                 <label htmlFor="password">Contraseña:</label>
-                <input type="password" id="password" name="password" onChange={onChangeFieldValue} value={form_state.password}/>
+                <input type="password" id="password" name="password"
+                placeholder='Tu contraseña'
+                onChange={onChangeFieldValue} 
+                value={form_state.password}/>
             </div>
-                        {
-                error && <span style={{color: 'red'}}>{error.message}</span>
+
+            {
+                error && <span className='login_message_error'>{error.message}</span>
             }
             {
                 response 
                 && 
                 response.ok 
                 && 
-                <span style={{color: 'yellowgreen'}}>
+                <span className='login_message_success'>
                     Usuario registrado exitosamente, te enviaremos un mail con instrucciones.
                 </span>
             }
-            <br/>
-            <button type="submit"disabled={loading || (response && response.ok)}>Iniciar sesion</button>
+
+            <button type="submit" className='login_button'
+            disabled={loading || (response && response.ok)}>
+                {loading ? 'Iniciando sesion...' : 'Iniciar sesion'}
+            </button>
+
         </form>
-        <span>
-            Aun no tienes cuenta? <Link to="/register">Registrate</Link>
-        </span>
-        </div>
+            </div>
+
+            <div className='login_footer'>
+        <span>Aun no tienes cuenta?</span>
+        <Link to="/register">Registrate</Link>   
+            </div>
+
+    </div>
+</div>
     )
     }
 

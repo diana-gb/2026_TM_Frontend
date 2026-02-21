@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { WorkspaceContext } from '../../context/WorkSpaceContext'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomeScreen = () => {
 
@@ -15,7 +15,9 @@ const HomeScreen = () => {
         }
 
     return (
+
         <div>
+            
             <h1>Bienvenido </h1>
             {
                 workspace_list_error && <span>{workspace_list_error.message}</span>
@@ -28,6 +30,7 @@ const HomeScreen = () => {
             {
                 workspace_list.data.workspaces && workspace_list.data.workspaces.length === 0 && <span>No tienes espacios de trabajo</span>
             }
+            <Link to='/create-workspace'>Agregar un espacio de trabajo nuevo</Link>
         </div>
     )
 }
