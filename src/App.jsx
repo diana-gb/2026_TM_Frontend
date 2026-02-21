@@ -9,6 +9,8 @@ import CreateWorkspaceScreen from './Screens/CreateWorkspaceSceen/CreateWorkspac
 import HomeScreen from './Screens/HomeSreen/HomeScreen'
 import ChannelScreen from './Screens/ChannelScreen/ChannelScreen'
 import ChannelContextProvider from './context/ChannelContextProvider'
+import MessagesContextProvider from './context/MessagesContextProvider'
+import MessageScreen from './Screens/MessageScreen/MessageScreen'
 
 function App() {
 
@@ -31,6 +33,11 @@ function App() {
             <ChannelContextProvider>
               <ChannelScreen/>
             </ChannelContextProvider>
+            }/>
+            <Route path='/workspace/:workspace_id/channels/:channel_id/messages' element={
+              <MessagesContextProvider>
+                <MessageScreen/>
+              </MessagesContextProvider>
             }/>
         </Route>
       </Routes>

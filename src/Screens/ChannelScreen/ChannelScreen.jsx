@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { ChannelContext } from '../../context/ChannelContext'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 
 const ChannelScreen = () => {
+    const {workspace_id} = useParams()
+    const navigate = useNavigate()
 const {channel_list_loading, channel_list, channel_list_error}= useContext(ChannelContext)
 console.log(channel_list) 
 
@@ -18,10 +20,20 @@ return (
                 channel_list_error && <span>{channel_list_error.message}</span>
             }
             {
-                channel_list.data.channels && channel_list.data.channels.length > 0 && channel_list.data.channels.map(
-                    channel => <div key={channel.id}>{channel.name}</div>
-                )
-            }
+                channel_list.data.channels && channel_list.data.channels.length > 0 && channel_list.data.channels.map((channel ) => {
+                
+                    return (
+                        <div 
+                        key={channel.id} onClick={() =>
+                            navigate(`/workspace/${workspace_id}/channels/${channel.id}/messages`)
+                        }>
+                            {channel.name}
+                            </div>
+                    )
+                }
+            )
+            } 
+            
             {
                 channel_list.data.channels && channel_list.data.channels.length === 0 && <span>No hay canales en este espacio de trabajo</span>
             }
