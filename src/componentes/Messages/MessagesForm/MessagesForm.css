@@ -1,0 +1,38 @@
+.message-form-container {
+    padding: 16px 24px;
+    border-top: 1px solid #e5e5e5;
+    background-color: white;
+}
+
+.message-form {
+    display: flex;
+    gap: 12px;
+}
+
+.message-form input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.message-form input:focus {
+    outline: none;
+    border-color: #611f69;
+}
+
+/* Botón */
+.message-form button {
+    padding: 10px 16px;
+    background-color: #611f69;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.message-form button:hover {
+    background-color: #4a154b;
+}

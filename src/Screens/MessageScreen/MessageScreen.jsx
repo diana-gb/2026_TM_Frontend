@@ -1,7 +1,10 @@
 import React, { useContext, useState } from 'react'
 import MessagesContext from '../../context/MessagesContext'
 import SlackLogo from '../../componentes/SlackLogo/SlackLogo'
-
+import MessageError from '../../componentes/Messages/MessageError/MessageError'
+import MessagesList from '../../componentes/Messages/MessagesList/MessagesList'
+import MessagesForm from '../../componentes/Messages/MessagesForm/MessagesForm'
+import './MessageScreen.css'
 const MessageScreen = () => {
 
     const {
@@ -28,39 +31,36 @@ const MessageScreen = () => {
     }
 
     return (
-        <div>
-            <h1>Tus Mensajes</h1>
-            {
-                messages_error && <span>{messages_error.message}</span>
-            }
-            {
-                messages_list && messages_list.length > 0 && messages_list.map((message) => {
-                    const username = message.fk_id_member?.fk_id_user?.username
-                    const content = message.message
+        <div className="messages-screen">
+    <header className="messages-header">
+        <h1># general</h1>
+    </header>
 
-                    return(
-                        <div key={message._id}>
-                            <p>{username}</p>
-                            <p>{content}</p>
-                        </div>
-                    )
-                })
-            }
-            {
-                messages_list && messages_list.length === 0 && <span>No hay mensajes en este canal</span>
-            }
-            
-            <form onSubmit={handleSend}>
-                <input
-                type='text'
-                value={newMessage}
-                onChange={(e) => setNewMessage (e.target.value)}
-                placeholder='Escribe un mensaje..'
-                />
-                <button type='submit'>Enviar</button>
-            </form>
-        </div>
+    <MessageError error={messages_error} />
+
+    <MessagesList messages={messages_list} />
+
+    <MessagesForm
+        value={newMessage}
+        onChange={setNewMessage}
+        onSubmit={handleSend}
+    />
+    </div>
     )
+/*         <div>
+            <h1>Mensajes del canal</h1>
+
+            <MessageError error={messages_error}/>
+
+            <MessagesList messages={messages_list}/>
+
+            <MessagesForm
+            value={newMessage}
+            onChange={setNewMessage}
+            onSubmit={handleSend}
+            />
+        </div>
+    ) */
     }
 
 export default MessageScreen

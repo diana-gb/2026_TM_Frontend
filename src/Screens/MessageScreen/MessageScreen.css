@@ -1,0 +1,19 @@
+.messages-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+/* Header */
+.messages-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: white;
+}
+
+.messages-header h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d1c1d;
+}
