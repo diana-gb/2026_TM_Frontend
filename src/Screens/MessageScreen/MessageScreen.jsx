@@ -35,7 +35,7 @@ const MessageScreen = () => {
             }
             {
                 messages_list && messages_list.length > 0 && messages_list.map((message) => {
-                    const username = message.fk_id_member.fk_id_user.username
+                    const username = message.fk_id_member?.fk_id_user?.username
                     const content = message.message
 
                     return(
