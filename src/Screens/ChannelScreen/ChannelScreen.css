@@ -1,0 +1,23 @@
+.channels-screen{
+    display: flex;
+    flex-direction: row;
+}
+
+.channels-screen-left {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #611f69;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.channels-screen-rigth{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: #616061;
+    font-size: 20px;
+    padding: 2rem;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}

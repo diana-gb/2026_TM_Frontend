@@ -1,0 +1,23 @@
+.channel-item {
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.channel-item:hover {
+    background-color: #cd87d5;
+}
+
+
+.channel-name {
+    font-size: 15px;
+    color: #d0c9d0;
+    font-weight: 500;
+}
+
+
+.channels-empty {
+    padding: 20px 24px;
+    font-size: 14px;
+    color: #777;
+}

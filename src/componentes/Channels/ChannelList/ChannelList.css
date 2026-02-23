@@ -1,0 +1,6 @@
+.channels-list {
+    flex: 1;
+    background-color: #611f69;
+    padding: 12px 0;
+    overflow-y: auto;
+}
