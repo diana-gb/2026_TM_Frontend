@@ -1,6 +1,6 @@
 .messages-screen {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 100vh;
     background-color: #f8f8f8;
 }
@@ -10,10 +10,22 @@
     padding: 16px 24px;
     border-bottom: 1px solid #e5e5e5;
     background-color: white;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .messages-header h1 {
     font-size: 18px;
     font-weight: 600;
     color: #1d1c1d;
+}
+
+.messages-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    background-color: #f8f8f8;
 }

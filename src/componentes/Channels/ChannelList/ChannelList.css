@@ -1,6 +1,11 @@
 .channels-list {
     flex: 1;
-    background-color: #611f69;
+    background-color: #552957;
     padding: 12px 0;
     overflow-y: auto;
 }
+
+    .channels-empty{
+        color: white;
+        margin-top: 30px;
+    }

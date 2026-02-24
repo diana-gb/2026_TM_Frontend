@@ -1,0 +1,14 @@
+    .workspace_header {
+    margin-bottom: 30px;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+
+    .workspace_header h1 {
+    font-size: 28px;
+    margin: 0;
+    }
+
+    .workspace_header p {
+    color: gray;
+    margin-top: 5px;
+    }

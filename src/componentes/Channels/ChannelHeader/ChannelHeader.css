@@ -5,19 +5,20 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    background-color: #431343;
 }
 
 .channels-header h1 {
     font-size: 20px;
     font-weight: 700;
-    color: #1d1c1d;
+    color: #f2ecf2;
 }
 
 
 .back-link {
     text-decoration: none;
     font-size: 14px;
-    color: #611f69; 
+    color: #b2a2b4; 
     font-weight: 600;
     width: fit-content;
 }

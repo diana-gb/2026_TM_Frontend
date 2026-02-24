@@ -5,7 +5,16 @@ import MessageError from '../../componentes/Messages/MessageError/MessageError'
 import MessagesList from '../../componentes/Messages/MessagesList/MessagesList'
 import MessagesForm from '../../componentes/Messages/MessagesForm/MessagesForm'
 import './MessageScreen.css'
+import ChannelHeader from '../../componentes/Channels/ChannelHeader/ChannelHeader'
+import ChannelError from '../../componentes/Channels/ChannelError/ChannelError'
+import ChannelList from '../../componentes/Channels/ChannelList/ChannelList'
+import { useNavigate, useParams } from 'react-router'
+import { ChannelContext } from '../../context/ChannelContext'
 const MessageScreen = () => {
+
+        const {workspace_id} = useParams()
+    const navigate = useNavigate()
+const {channel_list_loading, channel_list, channel_list_error}= useContext(ChannelContext)
 
     const {
         messages_loading,
@@ -32,19 +41,33 @@ const MessageScreen = () => {
 
     return (
         <div className="messages-screen">
-    <header className="messages-header">
-        <h1># general</h1>
-    </header>
+            <div className="channels-screen-left">
 
-    <MessageError error={messages_error} />
+                <ChannelHeader />
 
-    <MessagesList messages={messages_list} />
+                <ChannelError error={channel_list_error} />
 
-    <MessagesForm
-        value={newMessage}
-        onChange={setNewMessage}
-        onSubmit={handleSend}
-    />
+                <ChannelList
+                    channels={channel_list?.data?.channels}
+                    workspace_id={workspace_id}
+                    onNavigate={navigate}
+                />
+            </div>
+            <div className='messages-content'>
+                <header className="messages-header">
+                    <h1># general</h1>
+                </header>
+
+                <MessageError error={messages_error} />
+
+                <MessagesList messages={messages_list} />
+
+                <MessagesForm
+                    value={newMessage}
+                    onChange={setNewMessage}
+                    onSubmit={handleSend}
+                />
+            </div>
     </div>
     )
 /*         <div>

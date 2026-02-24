@@ -10,7 +10,7 @@ const ChannelScreen = () => {
     const {workspace_id} = useParams()
     const navigate = useNavigate()
 const {channel_list_loading, channel_list, channel_list_error}= useContext(ChannelContext)
-console.log(channel_list) 
+
 
 if(channel_list_loading || !channel_list){
     return <SlackLogo/>

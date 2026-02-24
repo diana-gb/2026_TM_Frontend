@@ -1,0 +1,28 @@
+    .workspace_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 1px solid #eee;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+
+    .workspace_item:hover {
+    background-color: #f1f1f1;
+    }
+
+    .workspace_avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #793181;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    }
