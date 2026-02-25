@@ -7,11 +7,11 @@
 
 /* Header */
 .messages-header {
-    padding: 16px 24px;
+    padding: 30px 24px;
     border-bottom: 1px solid #e5e5e5;
-    background-color: white;
+    background-color: #431343;
     width: 100%;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
 }
 
 .messages-header h1 {
@@ -23,11 +23,13 @@
 .messages-content{
     display: flex;
     flex-direction: column;
-/*     justify-content: center;
-    align-items: center; */
-    width: 80%;
+    width: 100%;
     height: auto;
     background-color: #f8f8f8;
     justify-content: space-between;
 
+}
+
+.channels-screen-left{
+    width: 300px;
 }

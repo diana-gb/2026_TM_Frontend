@@ -12,9 +12,16 @@ import { useNavigate, useParams } from 'react-router'
 import { ChannelContext } from '../../context/ChannelContext'
 const MessageScreen = () => {
 
-        const {workspace_id} = useParams()
-    const navigate = useNavigate()
-const {channel_list_loading, channel_list, channel_list_error}= useContext(ChannelContext)
+        const {workspace_id, channel_id} = useParams()
+        const navigate = useNavigate()
+        const {channel_list_loading, channel_list, channel_list_error}= useContext(ChannelContext)
+
+        const channels = channel_list?.data?.channels || []
+
+        const currentChannel = channels.find(
+        (channel) => String(channel._id) === String(channel_id)
+            )
+
 
     const {
         messages_loading,
@@ -26,9 +33,9 @@ const {channel_list_loading, channel_list, channel_list_error}= useContext(Chann
     const [newMessage, setNewMessage] = useState('')
 
     
-        if(messages_loading || !messages_list){
+/*         if(messages_loading || !messages_list){
             return <SlackLogo/>
-        }
+        } */
     async function handleSend(e) {
         e.preventDefault()
 
@@ -55,8 +62,18 @@ const {channel_list_loading, channel_list, channel_list_error}= useContext(Chann
             </div>
             <div className='messages-content'>
                 <header className="messages-header">
-                    <h1># general</h1>
-                </header>
+                    </header>
+
+{ messages_loading ? (
+    <SlackLogo/>
+) : (    
+    <>
+{/*     <h1> {currentChannel
+        ? `# ${currentChannel.name}`
+        : 'cargando canal..'
+        }
+
+    </h1> */}
 
                 <MessageError error={messages_error} />
 
@@ -66,7 +83,10 @@ const {channel_list_loading, channel_list, channel_list_error}= useContext(Chann
                     value={newMessage}
                     onChange={setNewMessage}
                     onSubmit={handleSend}
-                />
+                /> 
+    
+    </>
+                )}
             </div>
     </div>
     )

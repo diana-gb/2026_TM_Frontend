@@ -17,12 +17,14 @@
 
 .back-link {
     text-decoration: none;
-    font-size: 14px;
-    color: #b2a2b4; 
-    font-weight: 600;
+    font-size: 20px;
+    color: #f4eff5; 
+    font-weight: 300;
     width: fit-content;
+    align-self: flex-end;
 }
 
 .back-link:hover {
     text-decoration: underline;
-}
+    transform: scale(1.3);
+    }

@@ -35,9 +35,11 @@ function App() {
             </ChannelContextProvider>
             }/>
             <Route path='/workspace/:workspace_id/channels/:channel_id/messages' element={
+              <ChannelContextProvider>
               <MessagesContextProvider>
                 <MessageScreen/>
               </MessagesContextProvider>
+              </ChannelContextProvider>
             }/>
         </Route>
       </Routes>

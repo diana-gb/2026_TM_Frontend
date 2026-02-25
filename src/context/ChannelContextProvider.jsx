@@ -4,10 +4,10 @@ import getChannelList from "../services/channelService";
 import { useParams } from "react-router";
 import { ChannelContext } from "./ChannelContext";
 
-const ChannelContextProvider = ({ children}) => {
+const ChannelContextProvider = ({ children, /* workspace_id */}) => {
     
-    const {workspace_id} = useParams()
-    console.log("workspace_id:", workspace_id)
+    const {workspace_id} = useParams() 
+
 
     const {loading, response, error, sendRequest} = useRequest()
 

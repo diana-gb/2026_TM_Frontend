@@ -1,6 +1,7 @@
     .workspace_header {
     margin-bottom: 30px;
     font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    color: white;
     }
 
     .workspace_header h1 {
@@ -9,6 +10,19 @@
     }
 
     .workspace_header p {
-    color: gray;
+    color: white;
     margin-top: 5px;
+    justify-content: flex-end;
+    }
+
+    .header-content{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    img{
+        background-color: transparent;
+        width: 30px;
+        height: auto;
     }

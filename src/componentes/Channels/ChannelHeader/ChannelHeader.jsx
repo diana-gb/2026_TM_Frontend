@@ -5,7 +5,7 @@ const ChannelHeader = () => {
     return (
         <div className="channels-header">
             <Link to="/home" className="back-link">
-                volver
+                <ICONOS.flecha2/>
             </Link>
             <h1>Canales</h1>
         </div>

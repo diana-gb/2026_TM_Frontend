@@ -8,7 +8,7 @@ const MessagesList = ({messages}) => {
     }
 
     return (
-        <div className='messages - list'>
+        <div className='messages-list'>
             {messages.map((message) => (
                 <MessagesItem key={message._id} message={message} />
             ))}
