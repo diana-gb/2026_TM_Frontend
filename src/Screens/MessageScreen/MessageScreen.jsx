@@ -8,8 +8,9 @@ import './MessageScreen.css'
 import ChannelHeader from '../../componentes/Channels/ChannelHeader/ChannelHeader'
 import ChannelError from '../../componentes/Channels/ChannelError/ChannelError'
 import ChannelList from '../../componentes/Channels/ChannelList/ChannelList'
-import { useNavigate, useParams } from 'react-router'
+import { Link, useNavigate, useParams } from 'react-router'
 import { ChannelContext } from '../../context/ChannelContext'
+import ICONOS from '../../Constantes/iconos'
 const MessageScreen = () => {
 
         const {workspace_id, channel_id} = useParams()
@@ -62,6 +63,9 @@ const MessageScreen = () => {
             </div>
             <div className='messages-content'>
                 <header className="messages-header">
+                <Link to="/home" className="back-link_message">
+                    <ICONOS.flecha2/>
+                </Link>
                     </header>
 
 { messages_loading ? (

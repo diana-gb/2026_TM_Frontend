@@ -30,6 +30,10 @@
 
 }
 
+.back-link_message{
+    display: none;
+}
+
 .channels-screen-left{
     width: 300px;
 }
@@ -39,4 +43,19 @@
         .channels-screen-left{
             display: none;
         }
+
+        .back-link_message {
+            display: flex;
+        text-decoration: none;
+        font-size: 25px;
+        color: #f4eff5; 
+        font-weight: 300;
+        width: fit-content;
+        align-self: flex-end;
+}
+
+    .back-link_message:hover {
+    text-decoration: underline;
+    transform: scale(1.3);
+    }
     }
