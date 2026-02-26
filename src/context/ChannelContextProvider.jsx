@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import useRequest from "../hooks/useRequest";
-import getChannelList from "../services/channelService";
+import {getChannelList, createChannel } from "../services/channelService";
 import { useParams } from "react-router";
 import { ChannelContext } from "./ChannelContext";
 
-const ChannelContextProvider = ({ children, /* workspace_id */}) => {
+const ChannelContextProvider = ({ children}) => {
     
     const {workspace_id} = useParams() 
 
@@ -22,10 +22,25 @@ const ChannelContextProvider = ({ children, /* workspace_id */}) => {
         [workspace_id]
     )
 
+    const handleCreateChannel = async (name) => {
+        try {
+            await createChannel(workspace_id, name)
+
+            sendRequest(
+                () => 
+                    getChannelList(workspace_id)
+            )
+        }
+        catch (error){
+            console.log(error)
+        }
+    }
+
     const provider_channel_values = {
         channel_list_loading: loading,
         channel_list: response,
-        channel_list_error: error
+        channel_list_error: error,
+        handleCreateChannel
     }
 
     return (

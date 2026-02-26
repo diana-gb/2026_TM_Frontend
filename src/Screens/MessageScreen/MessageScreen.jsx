@@ -68,12 +68,6 @@ const MessageScreen = () => {
     <SlackLogo/>
 ) : (    
     <>
-{/*     <h1> {currentChannel
-        ? `# ${currentChannel.name}`
-        : 'cargando canal..'
-        }
-
-    </h1> */}
 
                 <MessageError error={messages_error} />
 
@@ -90,20 +84,7 @@ const MessageScreen = () => {
             </div>
     </div>
     )
-/*         <div>
-            <h1>Mensajes del canal</h1>
 
-            <MessageError error={messages_error}/>
-
-            <MessagesList messages={messages_list}/>
-
-            <MessagesForm
-            value={newMessage}
-            onChange={setNewMessage}
-            onSubmit={handleSend}
-            />
-        </div>
-    ) */
     }
 
 export default MessageScreen

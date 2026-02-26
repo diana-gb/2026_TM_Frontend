@@ -1,11 +1,15 @@
     import "./WorkspaceList.css";
     import WorkspaceItem from "../WorkspaceItem/WorkspaceItem"
+import { useContext } from "react";
+import { WorkspaceContext } from "../../../context/WorkspaceContext";
 
     const WorkspaceList = ({
     workspace_list,
     workspace_list_error,
     navigate,
     }) => {
+            const {handleDeleteWorkspace} = useContext(WorkspaceContext)
+
     return (
         <div className="workspace_list">
 
@@ -22,6 +26,7 @@
                 key={workspace.workspace_id}
                 workspace={workspace}
                 navigate={navigate}
+                handleDeleteWorkspace={handleDeleteWorkspace}
             />
             ))}
 

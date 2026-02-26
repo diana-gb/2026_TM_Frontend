@@ -9,7 +9,7 @@ import './ChannelScreen.css'
 const ChannelScreen = () => {
     const {workspace_id} = useParams()
     const navigate = useNavigate()
-const {channel_list_loading, channel_list, channel_list_error}= useContext(ChannelContext)
+const {channel_list_loading, channel_list, channel_list_error, handleCreateChannel }= useContext(ChannelContext)
 
 
 if(channel_list_loading || !channel_list){
@@ -21,7 +21,7 @@ if(channel_list_loading || !channel_list){
         <div className='channels-screen'>
             <div className="channels-screen-left">
 
-                <ChannelHeader />
+                <ChannelHeader onCreateChannel={handleCreateChannel}  />
 
                 <ChannelError error={channel_list_error} />
 
@@ -37,33 +37,6 @@ if(channel_list_loading || !channel_list){
         </div>
 )
 
-/* return (
-        <div>
-            <Link to='/home'>Volver</Link>
-            <h1>ChannelScreen</h1>
-            {
-                channel_list_error && <span>{channel_list_error.message}</span>
-            }
-            {
-                channel_list.data.channels && channel_list.data.channels.length > 0 && channel_list.data.channels.map((channel ) => {
-                
-                    return (
-                        <div 
-                        key={channel.id} onClick={() =>
-                            navigate(`/workspace/${workspace_id}/channels/${channel.id}/messages`)
-                        }>
-                            {channel.name}
-                            </div>
-                    )
-                }
-            )
-            } 
-            
-            {
-                channel_list.data.channels && channel_list.data.channels.length === 0 && <span>No hay canales en este espacio de trabajo</span>
-            }
-        </div>
-    ) */
 }
 
 export default ChannelScreen

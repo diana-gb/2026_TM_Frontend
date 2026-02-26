@@ -44,3 +44,26 @@ export async function createWorkspace(workspaceData) {
 
     return response
 }
+
+
+export async function deleteWorkspace(workspace_id) {
+
+    const http_response = await fetch(
+        `${URL_API}/api/workspace/${workspace_id}`,
+        {
+            method: 'DELETE',
+            headers: {
+                'x-api-key': import.meta.env.VITE_API_KEY,
+                'Authorization': 'Bearer ' + localStorage.getItem('auth_token'),
+            }
+        }
+    )
+
+    const response = await http_response.json()
+
+    if(!http_response.ok){
+        throw new ServerError(response.message, response.status)
+    }
+
+    return response
+}

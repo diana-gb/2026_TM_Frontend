@@ -58,7 +58,7 @@ const MessagesContextProvider = ({ children }) => {
         } else if (result?.message_created) {
             setMessagesList(prev => [...prev, result.message_created])
         } else if (result && !result.ok && !result.data) {
-            // If it's the message itself
+
             setMessagesList(prev => [...prev, result])
         }
     }

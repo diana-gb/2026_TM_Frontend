@@ -4,7 +4,7 @@
             align-items: flex-start; 
             min-height: 100vh;
             background-color: #431343;
-           /*  background-color:#f8f8f8; */
+        
 
             padding: 80px 16px;
         }
@@ -69,16 +69,13 @@
                 }
 
 
-        .home_create_button:hover {
-    /*     background-color: #4a154b; */
-    border-color: #611f69; 
-    /* background-color:  #f1f1f1; */
-    transform: scale(1.05);
-    /* rgba(97, 31, 105, 0.04); */
-        }
+            .home_create_button:hover {
+            border-color: #611f69; 
+            transform: scale(1.05);
+            }
 
 
-        .home_create_button:active {
-        transform: scale(0.98);
-        }
+            .home_create_button:active {
+            transform: scale(0.98);
+            }
 
