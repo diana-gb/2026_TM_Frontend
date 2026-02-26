@@ -24,4 +24,13 @@
 
     .empty {
     color: gray;
+    margin-top: 30px;
+    font-size: 25px;
     }
+
+      @media screen and (max-width: 770px){
+        
+        .empty {
+          font-size: 20px;
+        }
+      }

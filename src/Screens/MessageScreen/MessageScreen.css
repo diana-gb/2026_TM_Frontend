@@ -33,3 +33,10 @@
 .channels-screen-left{
     width: 300px;
 }
+
+    @media screen and (max-width: 392px){
+
+        .channels-screen-left{
+            display: none;
+        }
+    }

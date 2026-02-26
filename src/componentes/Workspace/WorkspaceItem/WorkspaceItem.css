@@ -11,7 +11,7 @@
     border: 1px solid #eee;
     font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     align-items: center;
-    margin-top: 15px;
+    margin-top: px;
     width: 400px;
 }
 
@@ -59,3 +59,17 @@
     background-color: #ffe6e6;
     color: #d11a2a;
 }
+
+    @media screen and (max-width: 770px){
+
+        .workspace_item {
+        width: 300px;
+    }
+    }
+
+    @media screen and (max-width: 320px){
+
+        .workspace_item {
+        width: 200px;
+    }
+    }
