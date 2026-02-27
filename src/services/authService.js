@@ -20,6 +20,7 @@ fetch recibe dos parametos:
 const URL_API = import.meta.env.VITE_API_URL //'http://localhost:8080'
 
 export async function login (email, password) {
+      console.log("API KEY FRONT:", import.meta.env.VITE_API_KEY);
     const response_http = await fetch(
         URL_API + '/api/auth/login',
         {
