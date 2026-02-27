@@ -64,8 +64,27 @@
 
         .workspace_item {
         width: 300px;
+        
     }
     }
+
+    @media screen and (max-width: 730px){
+
+        .workspace_item{
+            padding-left: 16px;
+            width: 300px;
+        }
+
+    .workspace_avatar {
+        width: 26px;
+        height: 26px;
+    }
+
+    .workspace_title {
+    font-size: 10px;
+    font-weight: 300;
+}
+}
 
     @media screen and (max-width: 320px){
 

@@ -4,8 +4,6 @@
             align-items: flex-start; 
             min-height: 100vh;
             background-color: #431343;
-        
-
             padding: 80px 16px;
         }
 
@@ -78,4 +76,13 @@
             .home_create_button:active {
             transform: scale(0.98);
             }
+
+
+        @media screen and (max-width: 730px){
+
+        .home-content{
+        max-width: 400px;  
+        }
+
+                }
 

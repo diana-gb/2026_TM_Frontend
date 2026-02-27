@@ -34,3 +34,11 @@
           font-size: 20px;
         }
       }
+
+      @media screen and (max-width: 730px){
+
+      .workspace_list {
+        max-width: 200px;
+        padding-left: 16px;
+      }
+      }
