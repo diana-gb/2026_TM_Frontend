@@ -4,6 +4,7 @@
     gap: 15px;
   /*   height: 80vh; */
     width: 100%;
+    justify-content: center;
     }
 
     .workspace_list::-webkit-scrollbar {
