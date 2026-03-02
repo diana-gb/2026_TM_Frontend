@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 15px;
   /*   height: 80vh; */
+    width: 100%;
     }
 
     .workspace_list::-webkit-scrollbar {
@@ -38,7 +39,7 @@
       @media screen and (max-width: 730px){
 
       .workspace_list {
-        max-width: 200px;
-        padding-left: 16px;
+/*         max-width: 200px;
+ */        padding-left: 16px;
       }
       }
