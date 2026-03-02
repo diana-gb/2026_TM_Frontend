@@ -74,7 +74,7 @@
 
         .workspace_item{
             padding-left: 16px;
-            width: 300px;
+            /* width: 300px; */
         }
 
     .workspace_avatar {
@@ -90,7 +90,7 @@
 
     @media screen and (max-width: 320px){
 
-        .workspace_item {
+/*         .workspace_item {
         width: 200px;
-    }
+    } */
     }
